@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "expenses-server-fastapi"
+version = "0.1.0"
+description = ""
+authors = ["Dinika Saxena <dinikasaxenas@gmail.com>"]
+readme = "README.md"
+packages = [{include = "expenses_server_fastapi"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = {extras = ["all"], version = "^0.104.0"}
+sqlalchemy = {extras = ["mariadb"], version = "^2.0.22"}
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.10.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
