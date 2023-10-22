@@ -7,7 +7,6 @@ from sqlalchemy import (
     Integer,
     Sequence,
 )
-import sqlalchemy
 from sqlalchemy.orm import relationship
 from sqlalchemy.sql.functions import current_timestamp
 from expenses_app.database import Base
@@ -29,9 +28,7 @@ class Expense(Base):
     description = Column(VARCHAR(200), default=None)
     account_id = Column(Integer, ForeignKey("accounts.id"))
 
-    account = relationship(
-        "Account", back_populates="expenses", foreign_keys="account_id"
-    )
+    account = relationship("Account", back_populates="expenses")
 
 
 class Account(Base):
